@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>是时候来薅京东的羊毛了，自动化签到脚本！ | 弗拉德 | 技术博客</title><meta name="keywords" content="京东自动签到，签到脚本，京东双11，京东618"><meta name="author" content="弗拉德"><meta name="copyright" content="弗拉德"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="双十一刚刚过，相信很多小伙伴也都剁手了。今年电商平台同样给出了很多优惠。有些优惠，比如红包，是靠运气来获得的，但是还有一些优惠是靠长期坚持才能获得。比如：签到、东东萌宠。每天都能坚持签到固然很棒，但是如果有脚本可以自动签到，那岂不是更美？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="是时候来薅京东的羊毛了，自动化签到脚本！">
+<meta property="og:url" content="https://www.fulade.me/tips-jd-auto-sigh-2.html">
+<meta property="og:site_name" content="弗拉德 | 技术博客">
+<meta property="og:description" content="双十一刚刚过，相信很多小伙伴也都剁手了。今年电商平台同样给出了很多优惠。有些优惠，比如红包，是靠运气来获得的，但是还有一些优惠是靠长期坚持才能获得。比如：签到、东东萌宠。每天都能坚持签到固然很棒，但是如果有脚本可以自动签到，那岂不是更美？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_jd_sigh.png">
+<meta property="article:published_time" content="2020-11-13T09:14:49.000Z">
+<meta property="article:modified_time" content="2020-12-01T03:16:40.563Z">
+<meta property="article:author" content="弗拉德">
+<meta property="article:tag" content="Tips">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_jd_sigh.png"><link rel="shortcut icon" href="/img/favicon.svg"><link rel="canonical" href="https://www.fulade.me/tips-jd-auto-sigh-2"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin="crossorigin"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-7413169030836136',
+  enable_page_level_ads: 'true'
+});</script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?df3bcf68f1b9d549ac02fcaead15e9dc";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-158738756-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-158738756-1');
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-12-01 11:16:40'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Flutter"><i class="fa-fw fa-fw fas fa-book"></i><span> Flutter教程</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Python"><i class="fa-fw fab fa-python"></i><span> Python教程</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Tips"><i class="fa-fw fab fa-slideshare"></i><span> 技术分享</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_jd_sigh.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">弗拉德 | 技术博客</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Flutter"><i class="fa-fw fa-fw fas fa-book"></i><span> Flutter教程</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Python"><i class="fa-fw fab fa-python"></i><span> Python教程</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Tips"><i class="fa-fw fab fa-slideshare"></i><span> 技术分享</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">是时候来薅京东的羊毛了，自动化签到脚本！</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-13T09:14:49.000Z" title="发表于 2020-11-13 17:14:49">2020-11-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-01T03:16:40.563Z" title="更新于 2020-12-01 11:16:40">2020-12-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Tips/">Tips</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>作者 | 弗拉德<br>来源 | 弗拉德（公众号：fulade_me)<br><a target="_blank" rel="noopener" href="http://fulade.me/tips-jd-auto-sigh-2.html">文章首发地址</a></p>
+<blockquote>
+<p>双十一刚刚过，相信很多小伙伴也都剁手了。今年电商平台同样给出了很多优惠。有些优惠，比如红包，是靠运气来获得的，但是还有一些优惠是靠长期坚持才能获得。比如：签到、东东萌宠。每天都能坚持签到固然很棒，但是如果有脚本可以自动签到，那岂不是更美？</p>
+</blockquote>
+<a id="more"></a>
+<p><a target="_blank" rel="noopener" href="https://github.com/Johnson8888/jd_sign_bot">自动签到脚本</a>此脚本涵盖了目前京90%以上的签到任务，我们只需要简单配置，每天定时触发，就可以签到，领奖品了。而且都是<strong>免费的</strong>。</p>
+<h5 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h5><ul>
+<li>node.js</li>
+<li>Server酱(可选)</li>
+</ul>
+<h5 id="获取京东Cookie"><a href="#获取京东Cookie" class="headerlink" title="获取京东Cookie"></a>获取京东Cookie</h5><p>这里以<code>Chrome</code>浏览器为例，<code>Edge</code>、<code>360浏览器</code>、<code>QQ浏览器</code>同样支持。</p>
+<ul>
+<li>打开Chrome浏览的隐私模式，输入<a target="_blank" rel="noopener" href="https://m.jd.com/">https://m.jd.com/</a>。</li>
+<li>按下键盘上的<code>F12</code>进入调试模式，选择手机模式。<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_auto_sign_device.jpg" alt="2020_11_13_auto_sign_device"><br>如果没有登录就使用<code>手机验证码</code>方式登录(已登录，可忽略)，使用验证码登录获取的<code>cookie</code>有效时长30天左右，存活时间更长。</li>
+<li>登录成功后，点击<code>Network</code><br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_auto_sign_network.png" alt="2020_11_13_auto_sign_network"></li>
+</ul>
+<p>然后点击箭头所指的这个按钮清理一下，因为网络请求太多了，不方便查看。<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_auto_sign_clear.png" alt="2020_11_13_auto_sign_clear"><br>清理完了之后，点击一下<code>我的</code>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_auto_sign_gif.png" alt="2020_11_13_auto_sign_gif"><br>这个时候我们找到一个<code>log.gif?</code>开头的请求，点击它，就可以看到<code>cookie</code>字段了。<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_auto_sign_cookie.png" alt="2020_11_13_auto_sign_cookie"></p>
+<ul>
+<li>这样复制出来的cookie比较长，我们只需要<code>pt_pin=xxxx;</code>和 <code>pt_key=xxxx;</code>部分的内容即可(注:英文引号<code>;</code>是必要的)。<br>可以用下面的脚本，直接在<code>console</code>里面输入下面脚本按<code>enter</code>回车键。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> CV = <span class="string">&#x27;单引号里面放上面拿到的cookie&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> CookieValue = CV.match(<span class="regexp">/pt_pin=.+?;/</span>) + CV.match(<span class="regexp">/pt_key=.+?;/</span>);</span><br><span class="line">copy(CookieValue);</span><br></pre></td></tr></table></figure>
+这样子整理出关键的的cookie已经在你的剪贴板上，可直接粘贴。<br>我们先把它保存好，下面的步骤要用到。</li>
+</ul>
+<h5 id="配置-Server酱"><a href="#配置-Server酱" class="headerlink" title="配置 Server酱"></a>配置 Server酱</h5><p><a target="_blank" rel="noopener" href="http://sc.ftqq.com/3.version">Server酱</a>是一个免费的，可以推送消息到我们微信的服务。<br>推送服务可以帮助我们每天观察签到的情况，如果出错了，可以及时调整。如果有的小伙伴不需要，可忽略这个步骤，直接进入下一步。</p>
+<ul>
+<li>打开主页 <a target="_blank" rel="noopener" href="http://sc.ftqq.com/3.version">http://sc.ftqq.com/3.version</a>，点击右上角<code>登入</code><br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_server_jiang_main_page.jpg" alt="2020_11_13_server_jiang_main_page"></li>
+<li>使用Github 授权，登录。<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_server_jiang_login.jpg" alt="2020_11_13_server_jiang_login"><br>输入账号密码即可。</li>
+<li>登录成功后点击<code>微信推送</code>并扫描二维码绑定微信<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_server_jiang_wechat.jpg" alt="2020_11_13_server_jiang_wechat"><br>使用手机打开微信，扫描屏幕上的二维码，如果未关注，先关注，然后再绑定即可。<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_server_jiang_qrcode.jpg" alt="2020_11_13_server_jiang_qrcode"></li>
+<li>绑定成功后，点击右上方的<code>发送消息</code>链接，就可以看到你自己的 <code>key</code>值，保存下来，后面会用到。<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_server_jiang_test.jpg" alt="2020_11_13_server_jiang_test"><br>当然你也可以在下面的<code>在线发送工具</code>测试推送是否生效。</li>
+</ul>
+<h5 id="配置本地代码"><a href="#配置本地代码" class="headerlink" title="配置本地代码"></a>配置本地代码</h5><ul>
+<li><p>使用<code>git clone</code>命令将<a target="_blank" rel="noopener" href="https://github.com/Johnson8888/jd_sign_bot">https://github.com/Johnson8888/jd_sign_bot</a>代码下载下来。</p>
+</li>
+<li><p>下载完成后，我们需要安装项目所需要的依赖。使用命令行工具(Mac下使用<code>Termainal</code>,Windows下使用<code>PowerShell</code>)进入到<code>jd_sign_bot</code>文件内。在命令行内输入 <code>npm install --dependencies</code>，等待运行完成。<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_npm_install.png" alt="2020_11_13_npm_install"><br>此时，项目文件夹内会多出一个 <code>node_modules</code>文件夹。</p>
+</li>
+<li><p>配置Cookies<br>打开文件内的<code>JD_DailyBonus.js</code>文件，修改<code>Key</code>参数为刚刚获取到的cookies<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_input_server_jiang.png" alt="2020_11_13_input_server_jiang"></p>
+</li>
+<li><p>配置Server酱<br>打开文件内的<code>app.js</code>文件，修改<code>serverJ</code>参数为刚刚获取到的Server酱的key<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_input_cookies.png" alt="2020_11_13_input_cookies"></p>
+</li>
+</ul>
+<h5 id="执行签到"><a href="#执行签到" class="headerlink" title="执行签到"></a>执行签到</h5><p>进入到<code>jd_sign_hot</code>文件夹下，执行 <code>node app.js</code>即可签到！<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_auto_sign_exec.jpg" alt="2020_11_13_auto_sign_exec"><br>此时我们的脚本在本地就已经部署好了，如果你想更编辑，可以把代码部署到云服务器上，这样就不需要每天点击触发了。<br>或者你也可以部署在自己的服务器上，每天定时执行。</p>
+<h4 id="你也可以-将脚本部署在腾讯云-·-云函数-上"><a href="#你也可以-将脚本部署在腾讯云-·-云函数-上" class="headerlink" title="你也可以 将脚本部署在腾讯云 · 云函数 上"></a>你也可以 将脚本部署在腾讯云 · 云函数 上</h4><p>去到<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/scf/index">腾讯云函数地址</a>，如果没有开通此服务的顺手开一下就可以了。</p>
+<ul>
+<li><p>单击左侧导航栏函数服务，进入<strong>函数服务</strong>页面。 在页面上方选择一个地域，最好选择离你常用地区近点的，不至于导致账号异常。单击<strong>新建</strong>。如下图所示：<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_tengxun_clound.jpg" alt="2020_11_13_tengxun_clound"></p>
+</li>
+<li><p>在<strong>新建函数</strong>页面填写函数基础信息，单击下一步。如下图所示：<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_tengxunyun_input.png" alt="2020_11_13_tengxunyun_input"></p>
+</li>
+<li><p>函数名称：可以自定义，比如为<code>jd_sign</code>。 运行环境：选择 <code>Nodejs 12.16</code>。 创建方式：选择 <code>空白函数</code>。<br>确保环境为<code>Nodejs 12.16</code>，执行方法改为：<code>index.main_handler</code>，提交方式建议选本地文件夹。</p>
+</li>
+<li><p>然后将刚才下载并配置好的文件夹<code>jd_sign_bot</code>上传上来。（记得node_modules文件夹一并上传），完了后点击下面的高级设置。<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_tengxunyun_input_1.png" alt="2020_11_13_tengxunyun_input_1"></p>
+</li>
+<li><p>内存用不了太大，64MB就够了（64M内存，免费时长6,400,000秒，内存与免费时长大致关系可以参看云函数官方说明），超时时间改为最大的900秒，然后点击最下面的完成。</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_tengxunyun_input_2.png" alt="2020_11_13_tengxunyun_input_3"></p>
+<ul>
+<li>点击刚创建的函数</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_tengxunyun_input_3.png" alt="2020_11_13_tengxunyun_input_3"></p>
+<p>点击<code>创建触发器</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_tengxunyun_input_4.png" alt="2020_11_13_tengxunyun_input_4"></p>
+<p>比如我填写的是 <code>0 45 8 * * * *</code>，每天上午8点45触发一次。<br>腾讯云提供了相关配置<a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/583/9708#cron-.E8.A1.A8.E8.BE.BE.E5.BC.8F">Cron的文档</a>，也有第三方<a target="_blank" rel="noopener" href="https://tool.lu/crontab/">测试工具</a>。</p>
+<h5 id="测试一下"><a href="#测试一下" class="headerlink" title="测试一下"></a>测试一下</h5><p>我们打开刚才创建的云函数，点击<code>保存并测试</code>，等过1分钟左右手机上收到推送，那我们的配置就是成功的。<br>如果没有收到推送，可以点击<code>日志查看</code>排查问题。<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_13_tengxun_cloud_test.png" alt="2020_11_13_tengxun_cloud_test"></p>
+<p>如果你不喜欢腾讯云的服务<br>我们可以参考<a target="_blank" rel="noopener" href="https://ruicky.me/2020/06/05/jd-sign/">ruicky大神的博客</a>，将脚本部署在Github Actions上面也是也可以的。</p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_footer.jpg" alt="公众号"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">弗拉德</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.fulade.me/tips-jd-auto-sigh-2.html">https://www.fulade.me/tips-jd-auto-sigh-2.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.fulade.me" target="_blank">弗拉德 | 技术博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Tips/">Tips</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_jd_sigh.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/python-list-7.html"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【Python 1-7】Python手把手教程之——详解列表List</div></div></a></div><div class="next-post pull-right"><a href="/dart-functions-1-9.html"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_functions.jpeg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【Flutter 1-9】Flutter教程Dart语言——函数和匿名函数</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/tips-github-free-books-3.html" title="免费送书啦！细数Github大神们的开源书籍！"><img class="cover" src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_freebook.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-25</div><div class="title">免费送书啦！细数Github大神们的开源书籍！</div></div></a></div><div><a href="/tips-janus-openssl-1.html" title="Jauns-gateway 报错【No package 'libssl' found No package 'libcrypto' found】"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-03</div><div class="title">Jauns-gateway 报错【No package 'libssl' found No package 'libcrypto' found】</div></div></a></div><div><a href="/tips-artipub-cookies-6.html" title="artipub点击"更新cookie状态"无任何反应"><img class="cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-30</div><div class="title">artipub点击"更新cookie状态"无任何反应</div></div></a></div><div><a href="/tips-command-line-protoc-5.html" title="protoc 同时编译多个.protoc文件"><img class="cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-25</div><div class="title">protoc 同时编译多个.protoc文件</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">弗拉德</div><div class="author-info__description">一生只有一个职业:学生</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://blog.csdn.net/nsurl"><i></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://juejin.im/user/2638445746091757" target="_blank" title="掘进"><i class="fas fa-tree"></i></a><a class="social-icon" href="https://www.jianshu.com/u/0423d00474f3" target="_blank" title="简书"><i class="fas fa-book"></i></a><a class="social-icon" href="mailto:zhx1222@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content"><div class="announcement_content">欢迎各位关注我的微信公众号，微信搜索：fulade_me </div><img class=" lazyloaded" data-src="https://cdn.shawnlin.cn/blog/images/notice.png" onerror="onerror=null,src=&quot;/img/friend_404.gif&quot;" width="180px" style="display:block;margin:0 auto" src="https://cdn.jsdelivr.net/gh/Johnson8888/blog_pages/images/gzh_qrcode.jpg"></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">运行环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E4%BA%AC%E4%B8%9CCookie"><span class="toc-number">2.</span> <span class="toc-text">获取京东Cookie</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-Server%E9%85%B1"><span class="toc-number">3.</span> <span class="toc-text">配置 Server酱</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text">配置本地代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%AD%BE%E5%88%B0"><span class="toc-number">5.</span> <span class="toc-text">执行签到</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%A0%E4%B9%9F%E5%8F%AF%E4%BB%A5-%E5%B0%86%E8%84%9A%E6%9C%AC%E9%83%A8%E7%BD%B2%E5%9C%A8%E8%85%BE%E8%AE%AF%E4%BA%91-%C2%B7-%E4%BA%91%E5%87%BD%E6%95%B0-%E4%B8%8A"><span class="toc-number"></span> <span class="toc-text">你也可以 将脚本部署在腾讯云 · 云函数 上</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%8B"><span class="toc-number">1.</span> <span class="toc-text">测试一下</span></a></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/tips-artipub-cookies-6.html" title="artipub点击&quot;更新cookie状态&quot;无任何反应"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="artipub点击&quot;更新cookie状态&quot;无任何反应"/></a><div class="content"><a class="title" href="/tips-artipub-cookies-6.html" title="artipub点击&quot;更新cookie状态&quot;无任何反应">artipub点击&quot;更新cookie状态&quot;无任何反应</a><time datetime="2020-11-30T01:29:15.000Z" title="发表于 2020-11-30 09:29:15">2020-11-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/python-handle-list-1-8.html" title="【Python 1-8】Python手把手教程之——管理列表List"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Python 1-8】Python手把手教程之——管理列表List"/></a><div class="content"><a class="title" href="/python-handle-list-1-8.html" title="【Python 1-8】Python手把手教程之——管理列表List">【Python 1-8】Python手把手教程之——管理列表List</a><time datetime="2020-11-26T08:48:24.000Z" title="发表于 2020-11-26 16:48:24">2020-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/tips-github-free-books-3.html" title="免费送书啦！细数Github大神们的开源书籍！"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_freebook.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="免费送书啦！细数Github大神们的开源书籍！"/></a><div class="content"><a class="title" href="/tips-github-free-books-3.html" title="免费送书啦！细数Github大神们的开源书籍！">免费送书啦！细数Github大神们的开源书籍！</a><time datetime="2020-11-25T12:49:34.000Z" title="发表于 2020-11-25 20:49:34">2020-11-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/tips-command-line-protoc-5.html" title="protoc 同时编译多个.protoc文件"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="protoc 同时编译多个.protoc文件"/></a><div class="content"><a class="title" href="/tips-command-line-protoc-5.html" title="protoc 同时编译多个.protoc文件">protoc 同时编译多个.protoc文件</a><time datetime="2020-11-25T07:04:57.000Z" title="发表于 2020-11-25 15:04:57">2020-11-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/python-list-7.html" title="【Python 1-7】Python手把手教程之——详解列表List"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Python 1-7】Python手把手教程之——详解列表List"/></a><div class="content"><a class="title" href="/python-list-7.html" title="【Python 1-7】Python手把手教程之——详解列表List">【Python 1-7】Python手把手教程之——详解列表List</a><time datetime="2020-11-23T01:49:14.000Z" title="发表于 2020-11-23 09:49:14">2020-11-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/tips-jd-auto-sigh-2.html" title="是时候来薅京东的羊毛了，自动化签到脚本！"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_jd_sigh.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="是时候来薅京东的羊毛了，自动化签到脚本！"/></a><div class="content"><a class="title" href="/tips-jd-auto-sigh-2.html" title="是时候来薅京东的羊毛了，自动化签到脚本！">是时候来薅京东的羊毛了，自动化签到脚本！</a><time datetime="2020-11-13T09:14:49.000Z" title="发表于 2020-11-13 17:14:49">2020-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/dart-functions-1-9.html" title="【Flutter 1-9】Flutter教程Dart语言——函数和匿名函数"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_functions.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Flutter 1-9】Flutter教程Dart语言——函数和匿名函数"/></a><div class="content"><a class="title" href="/dart-functions-1-9.html" title="【Flutter 1-9】Flutter教程Dart语言——函数和匿名函数">【Flutter 1-9】Flutter教程Dart语言——函数和匿名函数</a><time datetime="2020-11-08T14:28:10.000Z" title="发表于 2020-11-08 22:28:10">2020-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/dart-control-flow-statements-1-8.html" title="【Flutter 1-8】Flutter教程Dart语言——控制语句"><img src="https://cdn.jsdelivr.net/gh/Johnson8888/blog_pages/images/page_conver_control_flow_statements.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Flutter 1-8】Flutter教程Dart语言——控制语句"/></a><div class="content"><a class="title" href="/dart-control-flow-statements-1-8.html" title="【Flutter 1-8】Flutter教程Dart语言——控制语句">【Flutter 1-8】Flutter教程Dart语言——控制语句</a><time datetime="2020-11-08T12:03:59.000Z" title="发表于 2020-11-08 20:03:59">2020-11-08</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_jd_sigh.png)"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By 弗拉德</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: '9b64cc66df39380f4362',
+      clientSecret: '70a8013b8e0a7167993ea1e7bfd495c7ad9add96',
+      repo: 'Johnson8888.github.io',
+      owner: 'Johnson8888',
+      admin: ['Johnson8888'],
+      id: '61f857dd903b8deeb0093037935ad44b',
+      language: 'zh-CN',
+      perPage: 20,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    $.getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js', initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>

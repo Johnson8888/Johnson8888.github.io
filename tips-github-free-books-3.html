@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>免费送书啦！细数Github大神们的开源书籍！ | 弗拉德 | 技术博客</title><meta name="keywords" content="免费送书，github书籍，freebook，github上免费书籍"><meta name="author" content="弗拉德"><meta name="copyright" content="弗拉德"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="本书适用于Golang程序员。您之前应该阅读有关Go的介绍性书籍。本书的内容包括但不限于并发、网络编程、垃圾回收、组合、GO UNIX系统编程、基本数据类型（Array,Slice,Map）、GO源码、反射，接口，类型方法等高级概念。阅读本书需要一定的编程经验。如果你在工作中使用Go或者业余时间爱好GO，那么这本书一定会让你对GO的理解更上一层楼。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="免费送书啦！细数Github大神们的开源书籍！">
+<meta property="og:url" content="https://www.fulade.me/tips-github-free-books-3.html">
+<meta property="og:site_name" content="弗拉德 | 技术博客">
+<meta property="og:description" content="本书适用于Golang程序员。您之前应该阅读有关Go的介绍性书籍。本书的内容包括但不限于并发、网络编程、垃圾回收、组合、GO UNIX系统编程、基本数据类型（Array,Slice,Map）、GO源码、反射，接口，类型方法等高级概念。阅读本书需要一定的编程经验。如果你在工作中使用Go或者业余时间爱好GO，那么这本书一定会让你对GO的理解更上一层楼。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_freebook.png">
+<meta property="article:published_time" content="2020-11-25T12:49:34.000Z">
+<meta property="article:modified_time" content="2020-12-01T03:15:54.278Z">
+<meta property="article:author" content="弗拉德">
+<meta property="article:tag" content="Tips">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_freebook.png"><link rel="shortcut icon" href="/img/favicon.svg"><link rel="canonical" href="https://www.fulade.me/tips-github-free-books-3"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin="crossorigin"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-7413169030836136',
+  enable_page_level_ads: 'true'
+});</script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?df3bcf68f1b9d549ac02fcaead15e9dc";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-158738756-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-158738756-1');
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-12-01 11:15:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Flutter"><i class="fa-fw fa-fw fas fa-book"></i><span> Flutter教程</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Python"><i class="fa-fw fab fa-python"></i><span> Python教程</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Tips"><i class="fa-fw fab fa-slideshare"></i><span> 技术分享</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_freebook.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">弗拉德 | 技术博客</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Flutter"><i class="fa-fw fa-fw fas fa-book"></i><span> Flutter教程</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Python"><i class="fa-fw fab fa-python"></i><span> Python教程</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Tips"><i class="fa-fw fab fa-slideshare"></i><span> 技术分享</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">免费送书啦！细数Github大神们的开源书籍！</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-25T12:49:34.000Z" title="发表于 2020-11-25 20:49:34">2020-11-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-01T03:15:54.278Z" title="更新于 2020-12-01 11:15:54">2020-12-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Tips/">Tips</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>作者 | 弗拉德<br>来源 | 弗拉德（公众号：fulade_me)</p>
+<h3 id="Go-系列"><a href="#Go-系列" class="headerlink" title="Go 系列"></a>Go 系列</h3><p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_23_book_2.jpeg" />
+</p>
+<p align="center">
+《Mastering GO》
+</p>
+
+<blockquote>
+<p>推荐语：本书适用于Golang程序员。您之前应该阅读有关Go的介绍性书籍。本书的内容包括但不限于并发、网络编程、垃圾回收、组合、GO UNIX系统编程、基本数据类型（Array,Slice,Map）、GO源码、反射，接口，类型方法等高级概念。阅读本书需要一定的编程经验。如果你在工作中使用Go或者业余时间爱好GO，那么这本书一定会让你对GO的理解更上一层楼。<br><a target="_blank" rel="noopener" href="https://github.com/hantmac/Mastering_Go_ZH_CN">领取地址</a></p>
+</blockquote>
+<a id="more"></a>
+
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_23_book_6.png" />
+</p>
+
+<p align="center">
+《Go语法树入门——开启自制编程语言和编译器之旅》
+</p>  
+
+<blockquote>
+<p>Go语法树是Go语言源文件的另一种语义等价的表现形式。而Go语言自带的go fmt和go doc等命令都是在Go语法树的基础之上分析工具。因此将Go语言程序作为输入数据，让我们语法树这个维度重新审视Go语言程序，我们将得到创建Go语言本身的技术。Go语法树由标准库的go/ast包定义，它是在go/token包定义的词法基础只是抽象的语法树结构。本书简单介绍语法树相关包的使用（出版社已经约稿出版本书，并在开源版本的基础之上增加了语义信息、SSA形式、LLVM和凹语言等内容，因为出版社版权问题不方便全部公开新增内容）。<br><a target="_blank" rel="noopener" href="https://github.com/chai2010/go-ast-book">领取地址</a></p>
+</blockquote>
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_23_book_18.png" />
+</p>
+<p align="center">
+《Go语言101》
+</p>   
+
+<blockquote>
+<p>Go语言101是一本侧重于Go语言语法语义以及运行时相关知识点的编程解释和指导书。 此书旨在尽可能地帮助Go程序员更深更全面地理解Go语言。 此书也搜集了Go语言和Go编程中的很多细节。 此书同时适合Go初学者和有一定经验的Go程序员阅读。<br><a target="_blank" rel="noopener" href="https://github.com/golang101/golang101">领取地址</a></p>
+</blockquote>
+<h3 id="C-和-C"><a href="#C-和-C" class="headerlink" title="C 和 C++"></a>C 和 C++</h3><p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_23_book_15.png" />
+</p>
+
+<p align="center">
+《C/C++面向WebAssembly编程》
+</p>  
+
+<blockquote>
+<p>适读人群 ：本书适合从事高性能Web前端开发、跨语言Web应用开发的技术人员学习参考，也可以作为WebAssembly标准参考手册随时查阅。<br>作为一种新颖的网页前端技术，WebAssembly的发展日新月异。本书基于已受浏览器普遍支持的WebAssembly极小可用特征集，致力于通过简单易懂的方式，从使用方法到虚拟机设计，讲解WebAssembly的运行原理。极小可用特征集只是快速迭代的起点，SIMD、多线程等更多特性将逐渐被添加到WebAssembly标准中。<br><a target="_blank" rel="noopener" href="https://github.com/3dgen/cppwasm-book">领取地址</a></p>
+</blockquote>
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_23_book_16.jpeg" />
+</p>
+
+<p align="center">
+《C++ Concurrency in Action》
+</p>  
+
+<blockquote>
+<p>作者为对《C++ Concurrency in Action》的中文翻译。本书是基于C++11新标准的并发和多线程编程深度指南。从std::thread、std::mutex、std::future和std::async等基础类的使用，到内存模型和原子操作、基于锁和无锁数据结构的构建，再扩展到并行算法、线程管理，最后还介绍了多线程代码的测试工作。本书的附录部分还对C++11新语言特性中与多线程相关的项目进行了简要的介绍，并提供了C++11线程库的完整参考。本书适合于需要深入了解C++多线程开发的读者，以及使用C++进行各类软件开发的开发人员、测试人员。对于使用第三方线程库的读者，也可以从本书后面的章节中了解到相关的指引和技巧。同时，本书还可以作为C++11线程库的参考工具书。<br><a target="_blank" rel="noopener" href="https://github.com/xiaoweiChen/Cpp_Concurrency_In_Action">领取地址</a></p>
+</blockquote>
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_23_book_5.png" />
+</p>
+
+<p align="center">
+《BuildYourOwnLisp》
+</p> 
+
+<blockquote>
+<p>在本书中，你将在学习 C 语言的同时学会编写你自己的编程语言——一个 1000 行左右代码的简单 Lisp。不过我们并不是从零开始编写的，在代码中我用到了一个外部的库来完成一些初始化的工作。但是剩下的最重要的部分都是我们一行一行编写的，而且在本书结束时，你将会拥有一个属于自己的“麻雀虽小，五脏俱全”的 Lisp。<br>很多人非常想学习 C 语言，但却无从下手。现在大可不必担心了。如果你能坚持看完本书，我敢保证，至少你将拥有一个非常酷的新语言可以把玩，说不定还能成为一个熟练的 C 程序员呢！<br><a target="_blank" rel="noopener" href="https://ksco.gitbooks.io/build-your-own-lisp/content">领取地址</a></p>
+</blockquote>
+<h3 id="Istio"><a href="#Istio" class="headerlink" title="Istio"></a>Istio</h3><p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_23_book_8.jpg" />
+</p>
+<p align="center">
+《Istio 服务网格进阶实战》
+</p> 
+
+<blockquote>
+<p>Istio 是由 Google、IBM、Lyft 等共同开源的 Service Mesh（服务网格）框架，作为云原生时代下承 Kubernetes、上接 Serverless 架构的重要基础设施层，于 2017 年开始进入大众视野。<br>2018 年由蚂蚁金服发起成立了 ServiceMesher 社区，作为中国最早的一批研究和推广 Service Mesh 技术的开源社区决定整合社区资源，合作撰写一本开源的 Service Mesh 电子书以飨读者。<br><a target="_blank" rel="noopener" href="https://github.com/servicemesher/istio-handbook">领取地址</a></p>
+</blockquote>
+<h3 id="Rust"><a href="#Rust" class="headerlink" title="Rust"></a>Rust</h3><p align="center">
+《Rust 程序设计语言（第二版 & 2018 edition）》
+</p> 
+
+<blockquote>
+<p>Rust 被证明是可用于大型的、拥有不同层次系统编程知识的开发者团队间协作的高效工具。底层代码中容易出现种种隐晦的 bug，在其他编程语言中，只能通过大量的测试和经验丰富的开发者细心的代码评审来捕获它们。在 Rust 中，编译器充当了守门员的角色，它拒绝编译存在这些难以捕获的 bug 的代码，这其中包括并发 bug。通过与编译器合作，团队将更多的时间聚焦在程序逻辑上，而不是追踪 bug。<br><a target="_blank" rel="noopener" href="https://github.com/KaiserY/trpl-zh-cn">领取地址</a></p>
+</blockquote>
+<h3 id="英文书籍"><a href="#英文书籍" class="headerlink" title="英文书籍"></a>英文书籍</h3><p align="center">
+《Machine-Learning-Systems-Design》
+</p> 
+
+<blockquote>
+<p>一本关于机器学习系统设计的小册子附有练习题<br><a target="_blank" rel="noopener" href="https://github.com/chiphuyen/machine-learning-systems-design">领取地址</a></p>
+</blockquote>
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_23_book_9.jpg" />
+</p>
+<p align="center">
+《Front-End Developer Handbook 2019》
+</p> 
+
+<blockquote>
+<p>该书适合任何阶段的人用来了解前端开发实践的指南，它概述和讨论了前端工程的实践：如何学习前端、在 2019 年进行前端实践时应该使用哪些工具。<br><a target="_blank" rel="noopener" href="https://frontendmasters.com/books/front-end-handbook/2019/#1">领取地址</a></p>
+</blockquote>
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_23_book_1.jpg" />
+</p>
+<p align="center">
+《Java 编程思想》
+</p> 
+
+<blockquote>
+<p>《计算机科学丛书：Java编程思想（第4版）》赢得了全球程序员的广泛赞誉，即使是晦涩的概念，在BruceEckel的文字亲和力和小而直接的编程示例面前也会化解于无形。从Java的基础语法到高级特性（深入的面向对象概念、多线程、自动项目构建、单元测试和调试等），本书都能逐步指导你轻松掌握。Bruce Eckel，是MindView公司的总裁，该公司向客户提供软件咨询和培训。他是C++标准委员会拥有表决权的成员之一，拥有应用物理学学士和计算机工程硕士学位。除本书外，他还是《C++编程思想》的作者，并与人合著了《C++编程思想第2卷》。<br>关注公众号【fulade_me】<br>回复关键字：<strong>Java4</strong></p>
+</blockquote>
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_11_23_book_4.png" />
+</p>
+<p align="center">
+《JavaScript 20 年》
+</p> 
+
+<blockquote>
+<p>本书由 JavaScript 之父 Brendan Eich 与 ES6 规范首席作者 Allen Wirfs-Brock 联合编写，详细记载和解读了自 1995 年语言诞生到 2015 年 ES6 规范制定为止，共计 20 年的 JavaScript 语言演化历程。全书不仅讲解了大量语言技术细节层面的演进，更复盘了更高层面上规范制定与标准博弈中的历史成败，是一部讲述人类如何在商业与技术上的竞争合作中促进产业发展的故事。这个故事相当漫长而复杂。全文分为四个部分，每部分都对应 JavaScript 演化历程中的一个主要阶段。各部分之间还有一段简短的插曲，介绍彼时的开发者们是如何看待与使用 JavaScript 的。<br>关注公众号:【fulade_me】<br>回复关键字：<strong>JavaScript</strong></p>
+</blockquote>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_footer.jpg" alt="公众号"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">弗拉德</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.fulade.me/tips-github-free-books-3.html">https://www.fulade.me/tips-github-free-books-3.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.fulade.me" target="_blank">弗拉德 | 技术博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Tips/">Tips</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_freebook.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/python-handle-list-1-8.html"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【Python 1-8】Python手把手教程之——管理列表List</div></div></a></div><div class="next-post pull-right"><a href="/tips-command-line-protoc-5.html"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">protoc 同时编译多个.protoc文件</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/tips-janus-openssl-1.html" title="Jauns-gateway 报错【No package 'libssl' found No package 'libcrypto' found】"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-03</div><div class="title">Jauns-gateway 报错【No package 'libssl' found No package 'libcrypto' found】</div></div></a></div><div><a href="/tips-artipub-cookies-6.html" title="artipub点击"更新cookie状态"无任何反应"><img class="cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-30</div><div class="title">artipub点击"更新cookie状态"无任何反应</div></div></a></div><div><a href="/tips-command-line-protoc-5.html" title="protoc 同时编译多个.protoc文件"><img class="cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-25</div><div class="title">protoc 同时编译多个.protoc文件</div></div></a></div><div><a href="/tips-jd-auto-sigh-2.html" title="是时候来薅京东的羊毛了，自动化签到脚本！"><img class="cover" src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_jd_sigh.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-13</div><div class="title">是时候来薅京东的羊毛了，自动化签到脚本！</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">弗拉德</div><div class="author-info__description">一生只有一个职业:学生</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://blog.csdn.net/nsurl"><i></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://juejin.im/user/2638445746091757" target="_blank" title="掘进"><i class="fas fa-tree"></i></a><a class="social-icon" href="https://www.jianshu.com/u/0423d00474f3" target="_blank" title="简书"><i class="fas fa-book"></i></a><a class="social-icon" href="mailto:zhx1222@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content"><div class="announcement_content">欢迎各位关注我的微信公众号，微信搜索：fulade_me </div><img class=" lazyloaded" data-src="https://cdn.shawnlin.cn/blog/images/notice.png" onerror="onerror=null,src=&quot;/img/friend_404.gif&quot;" width="180px" style="display:block;margin:0 auto" src="https://cdn.jsdelivr.net/gh/Johnson8888/blog_pages/images/gzh_qrcode.jpg"></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Go-%E7%B3%BB%E5%88%97"><span class="toc-number">1.</span> <span class="toc-text">Go 系列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-%E5%92%8C-C"><span class="toc-number">2.</span> <span class="toc-text">C 和 C++</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Istio"><span class="toc-number">3.</span> <span class="toc-text">Istio</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rust"><span class="toc-number">4.</span> <span class="toc-text">Rust</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8B%B1%E6%96%87%E4%B9%A6%E7%B1%8D"><span class="toc-number">5.</span> <span class="toc-text">英文书籍</span></a></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/tips-artipub-cookies-6.html" title="artipub点击&quot;更新cookie状态&quot;无任何反应"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="artipub点击&quot;更新cookie状态&quot;无任何反应"/></a><div class="content"><a class="title" href="/tips-artipub-cookies-6.html" title="artipub点击&quot;更新cookie状态&quot;无任何反应">artipub点击&quot;更新cookie状态&quot;无任何反应</a><time datetime="2020-11-30T01:29:15.000Z" title="发表于 2020-11-30 09:29:15">2020-11-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/python-handle-list-1-8.html" title="【Python 1-8】Python手把手教程之——管理列表List"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Python 1-8】Python手把手教程之——管理列表List"/></a><div class="content"><a class="title" href="/python-handle-list-1-8.html" title="【Python 1-8】Python手把手教程之——管理列表List">【Python 1-8】Python手把手教程之——管理列表List</a><time datetime="2020-11-26T08:48:24.000Z" title="发表于 2020-11-26 16:48:24">2020-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/tips-github-free-books-3.html" title="免费送书啦！细数Github大神们的开源书籍！"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_freebook.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="免费送书啦！细数Github大神们的开源书籍！"/></a><div class="content"><a class="title" href="/tips-github-free-books-3.html" title="免费送书啦！细数Github大神们的开源书籍！">免费送书啦！细数Github大神们的开源书籍！</a><time datetime="2020-11-25T12:49:34.000Z" title="发表于 2020-11-25 20:49:34">2020-11-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/tips-command-line-protoc-5.html" title="protoc 同时编译多个.protoc文件"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="protoc 同时编译多个.protoc文件"/></a><div class="content"><a class="title" href="/tips-command-line-protoc-5.html" title="protoc 同时编译多个.protoc文件">protoc 同时编译多个.protoc文件</a><time datetime="2020-11-25T07:04:57.000Z" title="发表于 2020-11-25 15:04:57">2020-11-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/python-list-7.html" title="【Python 1-7】Python手把手教程之——详解列表List"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Python 1-7】Python手把手教程之——详解列表List"/></a><div class="content"><a class="title" href="/python-list-7.html" title="【Python 1-7】Python手把手教程之——详解列表List">【Python 1-7】Python手把手教程之——详解列表List</a><time datetime="2020-11-23T01:49:14.000Z" title="发表于 2020-11-23 09:49:14">2020-11-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/tips-jd-auto-sigh-2.html" title="是时候来薅京东的羊毛了，自动化签到脚本！"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_jd_sigh.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="是时候来薅京东的羊毛了，自动化签到脚本！"/></a><div class="content"><a class="title" href="/tips-jd-auto-sigh-2.html" title="是时候来薅京东的羊毛了，自动化签到脚本！">是时候来薅京东的羊毛了，自动化签到脚本！</a><time datetime="2020-11-13T09:14:49.000Z" title="发表于 2020-11-13 17:14:49">2020-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/dart-functions-1-9.html" title="【Flutter 1-9】Flutter教程Dart语言——函数和匿名函数"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_functions.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Flutter 1-9】Flutter教程Dart语言——函数和匿名函数"/></a><div class="content"><a class="title" href="/dart-functions-1-9.html" title="【Flutter 1-9】Flutter教程Dart语言——函数和匿名函数">【Flutter 1-9】Flutter教程Dart语言——函数和匿名函数</a><time datetime="2020-11-08T14:28:10.000Z" title="发表于 2020-11-08 22:28:10">2020-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/dart-control-flow-statements-1-8.html" title="【Flutter 1-8】Flutter教程Dart语言——控制语句"><img src="https://cdn.jsdelivr.net/gh/Johnson8888/blog_pages/images/page_conver_control_flow_statements.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Flutter 1-8】Flutter教程Dart语言——控制语句"/></a><div class="content"><a class="title" href="/dart-control-flow-statements-1-8.html" title="【Flutter 1-8】Flutter教程Dart语言——控制语句">【Flutter 1-8】Flutter教程Dart语言——控制语句</a><time datetime="2020-11-08T12:03:59.000Z" title="发表于 2020-11-08 20:03:59">2020-11-08</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_freebook.png)"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By 弗拉德</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: '9b64cc66df39380f4362',
+      clientSecret: '70a8013b8e0a7167993ea1e7bfd495c7ad9add96',
+      repo: 'Johnson8888.github.io',
+      owner: 'Johnson8888',
+      admin: ['Johnson8888'],
+      id: 'c3c0adcb028386d0a53619707fcf9972',
+      language: 'zh-CN',
+      perPage: 20,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    $.getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js', initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
