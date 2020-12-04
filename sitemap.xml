@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.fulade.me/dart-class-1-11.html</loc>
+    
+    <lastmod>2020-12-04</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.fulade.me/vscode-install-python-1-2.html</loc>
+    
+    <lastmod>2020-12-04</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.fulade.me/how-to-set-up-hexo-blog.html</loc>
     
     <lastmod>2020-12-04</lastmod>
@@ -163,13 +177,6 @@
   </url>
   
   <url>
-    <loc>https://www.fulade.me/vscode-install-python-1-2.html</loc>
-    
-    <lastmod>2020-11-02</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.fulade.me/python-run-helloword-1-3.html</loc>
     
     <lastmod>2020-11-02</lastmod>
@@ -271,6 +278,20 @@
   
   <url>
     <loc>https://www.fulade.me/tags/Flutter%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2020-12-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fulade.me/tags/Dart%E7%B1%BB/</loc>
+    <lastmod>2020-12-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fulade.me/tags/Dart-Class/</loc>
     <lastmod>2020-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
