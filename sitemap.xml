@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.fulade.me/dart-asynchronous-1-13.html</loc>
+    
+    <lastmod>2020-12-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.fulade.me/dart-generic-1-12.html</loc>
     
     <lastmod>2020-12-05</lastmod>
@@ -299,6 +306,20 @@
   
   <url>
     <loc>https://www.fulade.me/tags/Dart-Class/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fulade.me/tags/Dart%E5%BC%82%E6%AD%A5/</loc>
+    <lastmod>2020-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fulade.me/tags/Dart-Future/</loc>
     <lastmod>2020-12-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
