@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.fulade.me/dart-generic-1-12.html</loc>
+    <lastmod>2020-12-05</lastmod>
+  </url>
+  <url>
     <loc>https://www.fulade.me/dart-class-1-11.html</loc>
-    <lastmod>2020-12-04</lastmod>
+    <lastmod>2020-12-05</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fulade.me/python-number-1-6.html</loc>
+    <lastmod>2020-12-05</lastmod>
   </url>
   <url>
     <loc>https://www.fulade.me//python-run-helloword-1-3.html</loc>
@@ -71,10 +79,6 @@
   <url>
     <loc>https://www.fulade.me/python-handle-list-1-8.html</loc>
     <lastmod>2020-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.fulade.me/python-number-1-6.html</loc>
-    <lastmod>2020-11-24</lastmod>
   </url>
   <url>
     <loc>https://www.fulade.me/tips-janus-openssl-1.html</loc>
