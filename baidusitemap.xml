@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.fulade.me//top_index.html</loc>
+    <lastmod>2020-12-12</lastmod>
+  </url>
+  <url>
     <loc>https://www.fulade.me/tensorflow-mac-install-anaconda-01.html</loc>
-    <lastmod>2020-12-11</lastmod>
+    <lastmod>2020-12-12</lastmod>
   </url>
   <url>
     <loc>https://www.fulade.me/python-dict-1-11.html</loc>
@@ -38,10 +42,6 @@
   </url>
   <url>
     <loc>https://www.fulade.me//windows-vscode-flutter-1-4.html</loc>
-    <lastmod>2020-12-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.fulade.me//top_index.html</loc>
     <lastmod>2020-12-08</lastmod>
   </url>
   <url>
