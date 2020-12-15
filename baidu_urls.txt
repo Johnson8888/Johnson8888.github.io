@@ -1,3 +1,4 @@
+https://www.fulade.me/tensorflow-list-ai-lib-02.html
 https://www.fulade.me/tensorflow-mac-install-anaconda-01.html
 https://www.fulade.me/python-dict-1-11.html
 https://www.fulade.me/python-if-control-1-10.html
@@ -12,4 +13,3 @@ https://www.fulade.me/dart-operator-1-10.html
 https://www.fulade.me/tips-artipub-cookies-6.html
 https://www.fulade.me/python-handle-list-1-8.html
 https://www.fulade.me/tips-github-free-books-3.html
-https://www.fulade.me/tips-command-line-protoc-5.html
