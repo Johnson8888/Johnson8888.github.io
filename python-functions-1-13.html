@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【Python 1-13】Python手把手教程之——详解函数和函数的使用 | 弗拉德 | 技术博客</title><meta name="keywords" content="Python 函数,函数"><meta name="author" content="弗拉德"><meta name="copyright" content="弗拉德"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="要执行函数定义的特定任务，我们可以使用函数。需要在程序中多次执行同一项任务时，你无需反复编写完成该任务的代码，而只需调用执行该任务的函数，让Python运行其中的代码。你将发现，通过使用函数，程序的编写、阅读、测试和修复都将更容易。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Python 1-13】Python手把手教程之——详解函数和函数的使用">
+<meta property="og:url" content="https://www.fulade.me/python-functions-1-13.html">
+<meta property="og:site_name" content="弗拉德 | 技术博客">
+<meta property="og:description" content="要执行函数定义的特定任务，我们可以使用函数。需要在程序中多次执行同一项任务时，你无需反复编写完成该任务的代码，而只需调用执行该任务的函数，让Python运行其中的代码。你将发现，通过使用函数，程序的编写、阅读、测试和修复都将更容易。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg">
+<meta property="article:published_time" content="2020-12-20T08:05:51.000Z">
+<meta property="article:modified_time" content="2020-12-21T00:34:37.095Z">
+<meta property="article:author" content="弗拉德">
+<meta property="article:tag" content="Python 函数">
+<meta property="article:tag" content="函数">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg"><link rel="shortcut icon" href="/img/favicon.svg"><link rel="canonical" href="https://www.fulade.me/python-functions-1-13"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin="crossorigin"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-7413169030836136',
+  enable_page_level_ads: 'true'
+});</script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?df3bcf68f1b9d549ac02fcaead15e9dc";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-158738756-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-158738756-1');
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-12-21 08:34:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Flutter"><i class="fa-fw fa-fw fas fa-book"></i><span> Flutter教程</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Python"><i class="fa-fw fab fa-python"></i><span> Python教程</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Tips"><i class="fa-fw fab fa-slideshare"></i><span> 技术分享</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">弗拉德 | 技术博客</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Flutter"><i class="fa-fw fa-fw fas fa-book"></i><span> Flutter教程</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Python"><i class="fa-fw fab fa-python"></i><span> Python教程</span></a></div><div class="menus_item"><a class="site-page" href="/categories/Tips"><i class="fa-fw fab fa-slideshare"></i><span> 技术分享</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">【Python 1-13】Python手把手教程之——详解函数和函数的使用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-20T08:05:51.000Z" title="发表于 2020-12-20 16:05:51">2020-12-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-21T00:34:37.095Z" title="更新于 2020-12-21 08:34:37">2020-12-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python/">Python</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>作者 | 弗拉德<br>来源 | 弗拉德（公众号：fulade_me)</p>
+<h3 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h3><p>下面是一个打印问候语的简单函数，名为greet_user()：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet_user</span>():</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;显示简单的问候语&quot;&quot;&quot;</span></span><br><span class="line">    print(<span class="string">&quot;Hello!&quot;</span>)</span><br><span class="line">greet_user()</span><br></pre></td></tr></table></figure>
+<p>这个示例演示了最简单的函数结构。使用关键字<code>def</code>来告诉Python你要定义一个<br>函数。在这里，函数名为<code>greet_user()</code>，它不需要任何信息就能完成其工作，因此括号是空的（即便如此，括号也必不可少）。最后，定义以冒号结尾。</p>
+<p>紧跟在<code>def greet_user()</code>:后面的所有缩进行构成了函数体。代码行<code>print(&quot;Hello!&quot;</code>)是函数体内的唯一一行代码，<code>greet_user()</code>只做一项工作：打印Hello!。 </p>
+<p>由于这个函数不需要任何参数，因此调用它时只需输入<code>greet_user()</code>即可。和预期的一样，它打印<code>Hello!</code>。</p>
+<h4 id="向函数传递信息"><a href="#向函数传递信息" class="headerlink" title="向函数传递信息"></a>向函数传递信息</h4><p>只需稍作修改，就可以让函数<code>greet_user()</code>不仅向用户显示<code>Hello!</code>，还将用户的名字用作参数。  </p>
+<p>因此，可在函数定义<code>def greet_user()</code>的括号内添加<code>username</code>。通过在这里添加<code>username</code>，就可让函数接受你给<code>username</code>指定的任何值。现在，这个函数要求你调用它时给<code>username</code>指定一个值。调用<code>greet_user()</code>时，可将一个名字传递给它，如下所示：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet_user</span>(<span class="params">username</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;显示简单的问候语&quot;&quot;&quot;</span></span><br><span class="line">    print(<span class="string">&quot;Hello, &quot;</span> + username.title() + <span class="string">&quot;!&quot;</span>)</span><br><span class="line">greet_user(<span class="string">&#x27;Fulade&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<p>代码<code>greet_user(&#39;Fulade&#39;)</code>调用函数<code>greet_user()</code>，并向它提供执行<code>print</code>语句所需的信息。这个函数接受你传递给它的名字，并向这个人发出问候：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello Fulade !</span><br></pre></td></tr></table></figure>
+<p>同样，<code>greet_user(&#39;sarah&#39;)</code>调用函数<code>greet_user()</code>并向它传递<code>sarah</code>，打印<code>Hello, Sarah!</code>。<br>你可以根据需要调用函数<code>greet_user()</code>任意次，调用时无论传入什么样的名字，都会生成相应的输出。</p>
+<h4 id="实参和形参"><a href="#实参和形参" class="headerlink" title="实参和形参"></a>实参和形参</h4><p>前面定义函数<code>greet_user()</code>时，要求给变量<code>username</code>指定一个值。调用这个函数并提供这种参数，它将打印相应的问候语。  </p>
+<p>在函数<code>greet_user()</code>的定义中，变量<code>username</code>是一个形参——函数完成其工作所需的一项信息。在代码<code>greet_user(&#39;Fulade&#39;)</code>中，值<code>Fulade</code>是一个实参。</p>
+<p>实参是调用函数时传递给函数的信息。我们调用函数时，将要让函数使用的信息放在括号内。在<code>greet_user(&#39;Fulade&#39;)</code>中，将实参<code>Fulade</code>传递给了函数<code>greet_user()</code>，这个值被存储在形参<code>username</code>中。</p>
+<h3 id="传递实参"><a href="#传递实参" class="headerlink" title="传递实参"></a>传递实参</h3><p>鉴于函数定义中可能包含多个形参，因此函数调用中也可能包含多个实参。向函数传递实参的方式很多，可使用位置实参，这要求实参的顺序与形参的顺序相同；也可使用关键字实参，其中每个实参都由变量名和值组成；还可使用列表和字典。下面来依次介绍这些方式。</p>
+<h4 id="位置实参"><a href="#位置实参" class="headerlink" title="位置实参"></a>位置实参</h4><p>你调用函数时，Python必须将函数调用中的每个实参都关联到函数定义中的一个形参。因此，最简单的关联方式是基于实参的顺序。这种关联方式被称为位置实参。为明白其中的工作原理，来看一个显示宠物信息的函数。这个函数指出一个宠物属于哪种动物以及它叫什么名字，如下所示：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span>(<span class="params">animal_type, pet_name</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;显示宠物的信息&quot;&quot;&quot;</span></span><br><span class="line">    print(<span class="string">&quot;\nI have a &quot;</span> + animal_type + <span class="string">&quot;.&quot;</span>)</span><br><span class="line">    print(<span class="string">&quot;My &quot;</span> + animal_type + <span class="string">&quot;&#x27;s name is &quot;</span> + pet_name.title() + <span class="string">&quot;.&quot;</span>)</span><br><span class="line">describe_pet(<span class="string">&#x27;hamster&#x27;</span>, <span class="string">&#x27;harry&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>这个函数的定义表明，它需要一种动物类型和一个名字。调用<code>describe_pet()</code>时，需要按顺序提供一种动物类型和一个名字。</p>
+<p>例如，在前面的函数调用中，实参<code>hamster</code>存储在形参<code>animal_type</code>中，而实参<code>harry</code>存储在形参<code>pet_name</code>中。在函数体内，使用了这两个形参来显示宠物的信息。</p>
+<h5 id="调用函数多次"><a href="#调用函数多次" class="headerlink" title="调用函数多次"></a>调用函数多次</h5><p>你可以根据需要调用函数任意次。要再描述一个宠物，只需再次调用<code>describe_pet()</code>即可：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span>(<span class="params">animal_type, pet_name</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;显示宠物的信息&quot;&quot;&quot;</span></span><br><span class="line">    print(<span class="string">&quot;\nI have a &quot;</span> + animal_type + <span class="string">&quot;.&quot;</span>)</span><br><span class="line">    print(<span class="string">&quot;My &quot;</span> + animal_type + <span class="string">&quot;&#x27;s name is &quot;</span> + pet_name.title() + <span class="string">&quot;.&quot;</span>)</span><br><span class="line">describe_pet(<span class="string">&#x27;hamster&#x27;</span>, <span class="string">&#x27;harry&#x27;</span>)</span><br><span class="line">describe_pet(<span class="string">&#x27;dog&#x27;</span>, <span class="string">&#x27;willie&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<p>第二次调用<code>describe_pet()</code>函数时，我们向它传递了实参<code>dog</code>和<code>willie</code>。与第一次调用时一样，Python将实参<code>dog</code>关联到形参<code>animal_type</code>，并将实参<code>willie</code>关联到形参<code>pet_name</code>。  </p>
+<p>与前面一样，这个函数完成其任务，但打印的是一条名为<code>Willie</code>的小狗的信息。至此，我们有一只名为<code>Harry</code>的仓鼠，还有一条名为<code>Willie</code>的小狗：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">I have a hamster.</span><br><span class="line">My hamster<span class="string">&#x27;s name is Harry.</span></span><br><span class="line"><span class="string">I have a dog.</span></span><br><span class="line"><span class="string">My dog&#x27;</span>s name is Willie. </span><br></pre></td></tr></table></figure>
+
+<p>调用函数多次是一种效率极高的工作方式。我们只需在函数中编写描述宠物的代码一次，然后每当需要描述新宠物时，都可调用这个函数，并向它提供新宠物的信息。即便描述宠物的代码增加到了10行，你依然只需使用一行调用函数的代码，就可描述一个新宠物。  </p>
+<p>在函数中，可根据需要使用任意数量的位置实参，Python将按顺序将函数调用中的实参关联到函数定义中相应的形参。</p>
+<h5 id="位置实参的顺序很重要"><a href="#位置实参的顺序很重要" class="headerlink" title="位置实参的顺序很重要"></a>位置实参的顺序很重要</h5><p>使用位置实参来调用函数时，如果实参的顺序不正确，结果可能出乎意料：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span>(<span class="params">animal_type, pet_name</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;显示宠物的信息&quot;&quot;&quot;</span></span><br><span class="line">    print(<span class="string">&quot;\nI have a &quot;</span> + animal_type + <span class="string">&quot;.&quot;</span>)</span><br><span class="line">    print(<span class="string">&quot;My &quot;</span> + animal_type + <span class="string">&quot;&#x27;s name is &quot;</span> + pet_name.title() + <span class="string">&quot;.&quot;</span>)</span><br><span class="line">describe_pet(<span class="string">&#x27;harry&#x27;</span>, <span class="string">&#x27;hamster&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<p>在这个函数调用中，我们先指定名字，再指定动物类型。由于实参<code>harry</code>在前，这个值将存储到形参<code>animal_type</code>中；同理，<code>hamster</code>将存储到形参<code>pet_name</code>中。结果是我们得到了一个名为<code>Hamster</code>的<code>harry</code>：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">I have a harry.</span><br><span class="line">My harry<span class="string">&#x27;s name is Hamster. </span></span><br></pre></td></tr></table></figure>
+<p>如果结果像上面一样搞笑，请确认函数调用中实参的顺序与函数定义中形参的顺序一致。</p>
+<h4 id="关键字实参"><a href="#关键字实参" class="headerlink" title="关键字实参"></a>关键字实参</h4><p>关键字实参是传递给函数的名称—值对。你直接在实参中将名称和值关联起来了，因此向函数传递实参时不会混淆。</p>
+<p>关键字实参让你无需考虑函数调用中的实参顺序，还清楚地指出了函数调用中各个值的用途。下面来重新编写<code>pets.py</code>，在其中使用关键字实参来调用<code>describe_pet()</code>：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span>(<span class="params">animal_type, pet_name</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;显示宠物的信息&quot;&quot;&quot;</span></span><br><span class="line">    print(<span class="string">&quot;\nI have a &quot;</span> + animal_type + <span class="string">&quot;.&quot;</span>)</span><br><span class="line">    print(<span class="string">&quot;My &quot;</span> + animal_type + <span class="string">&quot;&#x27;s name is &quot;</span> + pet_name.title() + <span class="string">&quot;.&quot;</span>)</span><br><span class="line">describe_pet(animal_type=<span class="string">&#x27;hamster&#x27;</span>, pet_name=<span class="string">&#x27;harry&#x27;</span>) </span><br></pre></td></tr></table></figure>
+
+<p>函数<code>describe_pet()</code>还是原来那样，但调用这个函数时，我们向Python明确地指出了各个实参对应的形参。看到这个函数调用时，Python知道应该将实参<code>hamster</code>和<code>harry</code>分别存储在形参<code>animal_type</code>和<code>pet_name</code>中。输出正确无误，它指出我们有一只名为<code>Harry</code>的仓鼠。  </p>
+<p>关键字实参的顺序无关紧要，因为Python知道各个值该存储到哪个形参中。下面两个函数调用是等效的：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">describe_pet(animal_type=<span class="string">&#x27;hamster&#x27;</span>, pet_name=<span class="string">&#x27;harry&#x27;</span>)</span><br><span class="line">describe_pet(pet_name=<span class="string">&#x27;harry&#x27;</span>, animal_type=<span class="string">&#x27;hamster&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<h4 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h4><p>编写函数时，可给每个形参指定默认值。在调用函数中给形参提供了实参时，Python将使用指定的实参值；否则，将使用形参的默认值。因此，给形参指定默认值后，可在函数调用中省略相应的实参。使用默认值可简化函数调用，还可清楚地指出函数的典型用法。  </p>
+<p>例如，如果你发现调用<code>describe_pet()</code>时，描述的大都是小狗，就可将形参<code>animal_type</code>的默认值设置为<code>dog</code>。这样，调用<code>describe_pet()</code>来描述小狗时，就可不提供这种信息：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span>(<span class="params">pet_name, animal_type=<span class="string">&#x27;dog&#x27;</span></span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;显示宠物的信息&quot;&quot;&quot;</span></span><br><span class="line">    print(<span class="string">&quot;\nI have a &quot;</span> + animal_type + <span class="string">&quot;.&quot;</span>)</span><br><span class="line">    print(<span class="string">&quot;My &quot;</span> + animal_type + <span class="string">&quot;&#x27;s name is &quot;</span> + pet_name.title() + <span class="string">&quot;.&quot;</span>)</span><br><span class="line">describe_pet(pet_name=<span class="string">&#x27;willie&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<p>这里修改了函数<code>describe_pet()</code>的定义，在其中给形参<code>animal_type</code>指定了默认值<code>dog</code>。这样，调用这个函数时，如果没有给<code>animal_type</code>指定值，Python将把这个形参设置为<code>dog</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">I have a dog.</span><br><span class="line">My dog<span class="string">&#x27;s name is Willie. </span></span><br></pre></td></tr></table></figure>
+
+<p>请注意，在这个函数的定义中，修改了形参的排列顺序。由于给<code>animal_type</code>指定了默认值，无需通过实参来指定动物类型，因此在函数调用中只包含一个实参——宠物的名字。然而，Python依然将这个实参视为位置实参，因此如果函数调用中只包含宠物的名字，这个实参将关联到函数定义中的第一个形参。这就是需要将pet_name放在形参列表开头的原因所在。  </p>
+<p>现在，使用这个函数的最简单的方式是，在函数调用中只提供小狗的名字：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe_pet(<span class="string">&#x27;willie&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<p>这个函数调用的输出与前一个示例相同。只提供了一个实参——<code>willie</code>，这个实参将关联到函数定义中的第一个形参——<code>pet_name</code>。由于没有给<code>animal_type</code>提供实参，因此Python使用其默认值<code>dog</code>。<br>如果要描述的动物不是小狗，可使用类似于下面的函数调用：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe_pet(pet_name=<span class="string">&#x27;harry&#x27;</span>, animal_type=<span class="string">&#x27;hamster&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<p>由于显式地给<code>animal_type</code>提供了实参，因此Python将忽略这个形参的默认值。</p>
+<h4 id="等效的函数调用"><a href="#等效的函数调用" class="headerlink" title="等效的函数调用"></a>等效的函数调用</h4><p>由于可混合使用位置实参、关键字实参和默认值，通常有多种等效的函数调用方式。请看下<br>面的函数<code>describe_pets()</code>的定义，其中给一个形参提供了默认值：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span>(<span class="params">pet_name, animal_type=<span class="string">&#x27;dog&#x27;</span></span>):</span> </span><br></pre></td></tr></table></figure>
+<p>基于这种定义，在任何情况下都必须给<code>pet_name</code>提供实参；指定该实参时可以使用位置方式，也可以使用关键字方式。如果要描述的动物不是小狗，还必须在函数调用中给<code>animal_type</code>提供实参；同样，指定该实参时可以使用位置方式，也可以使用关键字方式。</p>
+<p>下面对这个函数的所有调用都可行：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一条名为Willie的小狗</span></span><br><span class="line">describe_pet(<span class="string">&#x27;willie&#x27;</span>)</span><br><span class="line">describe_pet(pet_name=<span class="string">&#x27;willie&#x27;</span>)</span><br><span class="line"><span class="comment"># 一只名为Harry的仓鼠</span></span><br><span class="line">describe_pet(<span class="string">&#x27;harry&#x27;</span>, <span class="string">&#x27;hamster&#x27;</span>)</span><br><span class="line">describe_pet(pet_name=<span class="string">&#x27;harry&#x27;</span>, animal_type=<span class="string">&#x27;hamster&#x27;</span>)</span><br><span class="line">describe_pet(animal_type=<span class="string">&#x27;hamster&#x27;</span>, pet_name=<span class="string">&#x27;harry&#x27;</span>) </span><br></pre></td></tr></table></figure>
+<p>这些函数调用的输出与前面的示例相同。</p>
+<h4 id="避免实参错误"><a href="#避免实参错误" class="headerlink" title="避免实参错误"></a>避免实参错误</h4><p>等你开始使用函数后，如果遇到实参不匹配错误，不要大惊小怪。你提供的实参多于或少于函数完成其工作所需的信息时，将出现实参不匹配错误。<br>例如，如果调用函数<code>describe_pet()</code>时没有指定任何实参，结果将如何呢？</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span>(<span class="params">animal_type, pet_name</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;显示宠物的信息&quot;&quot;&quot;</span></span><br><span class="line">    print(<span class="string">&quot;\nI have a &quot;</span> + animal_type + <span class="string">&quot;.&quot;</span>)</span><br><span class="line">    print(<span class="string">&quot;My &quot;</span> + animal_type + <span class="string">&quot;&#x27;s name is &quot;</span> + pet_name.title() + <span class="string">&quot;.&quot;</span>)</span><br><span class="line">describe_pet()</span><br></pre></td></tr></table></figure>
+<p>Python发现该函数调用缺少必要的信息，而<code>traceback</code>指出了这一点：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line"> File <span class="string">&quot;pets.py&quot;</span>, line <span class="number">6</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line"> describe_pet()</span><br><span class="line"> TypeError: describe_pet() missing <span class="number">2</span> required positional arguments: <span class="string">&#x27;animal_</span></span><br><span class="line"><span class="string">type&#x27;</span> <span class="keyword">and</span> <span class="string">&#x27;pet_name&#x27;</span> </span><br></pre></td></tr></table></figure>
+
+
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>函数并非总是直接显示输出，相反，它可以处理一些数据，并返回一个或一组值。函数返回的值被称为返回值。在函数中，可使用<code>return</code>语句将值返回到调用函数的代码行。返回值让你能够将程序的大部分繁重工作移到函数中去完成，从而简化主程序。</p>
+<h4 id="返回简单值"><a href="#返回简单值" class="headerlink" title="返回简单值"></a>返回简单值</h4><p>下面来看一个函数，它接受名和姓并返回姓名：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_formatted_name</span>(<span class="params">first_name, last_name</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;返回的姓名&quot;&quot;&quot;</span></span><br><span class="line">    full_name = first_name + <span class="string">&#x27; &#x27;</span> + last_name</span><br><span class="line">    <span class="keyword">return</span> full_name.title()</span><br><span class="line">    musician = get_formatted_name(<span class="string">&#x27;jimi&#x27;</span>, <span class="string">&#x27;hendrix&#x27;</span>)</span><br><span class="line">print(musician) </span><br></pre></td></tr></table></figure>
+<p>函数<code>get_formatted_name()</code>的定义通过形参接受名和姓。它将姓和名合而为一，在它们之间加上一个空格，并将结果存储在变量<code>full_name</code>中。然后，将<code>full_name</code>的值转换为首字母大写格式，并将结果返回到函数调用行。调用返回值的函数时，需要提供一个变量，用于存储返回的值。</p>
+<p>在这里，将返回值存储在了变量<code>musician</code>中。输出是姓名：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Jimi Hendrix </span><br></pre></td></tr></table></figure>
+
+<h4 id="让实参变成可选的"><a href="#让实参变成可选的" class="headerlink" title="让实参变成可选的"></a>让实参变成可选的</h4><p>有时候，需要让实参变成可选的，这样使用函数的人就只需在必要时才提供额外的信息。可使用默认值来让实参变成可选的。<br>例如，假设我们要扩展函数<code>get_formatted_name()</code>，使其还处理中间名。为此，可将其修改成类似于下面这样：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def get_formatted_name(first_name, middle_name, last_name):</span><br><span class="line">    <span class="string">&quot;&quot;</span><span class="string">&quot;返回姓名&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line">    full_name = first_name + <span class="string">&#x27; &#x27;</span> + middle_name + <span class="string">&#x27; &#x27;</span> + last_name</span><br><span class="line">    <span class="built_in">return</span> full_name.title()</span><br><span class="line">musician = get_formatted_name(<span class="string">&#x27;john&#x27;</span>, <span class="string">&#x27;lee&#x27;</span>, <span class="string">&#x27;hooker&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(musician) </span><br></pre></td></tr></table></figure>
+<p>只要同时提供名、中间名和姓，这个函数就能正确地运行。它根据这三部分创建一个字符串，在适当的地方加上空格，并将结果转换为首字母大写格式：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">John Lee Hooker </span><br></pre></td></tr></table></figure>
+<p>然而，并非所有的人都有中间名，但如果你调用这个函数时只提供了名和姓，它将不能正确地运行。为让中间名变成可选的，可给实参<code>middle_name</code>指定一个默认值——空字符串，并在用户没有提供中间名时不使用这个实参。<br>为让<code>get_formatted_name()</code>在没有提供中间名时依然可行，可给实参<code>middle_name</code>指定一个默认值——空字符串，并将其移到形参列表的末尾：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_formatted_name</span>(<span class="params">first_name, last_name, middle_name=<span class="string">&#x27;&#x27;</span></span>):</span></span><br><span class="line"> <span class="string">&quot;&quot;&quot;返回姓名&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> middle_name:</span><br><span class="line">        full_name = first_name + <span class="string">&#x27; &#x27;</span> + middle_name + <span class="string">&#x27; &#x27;</span> + last_name</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        full_name = first_name + <span class="string">&#x27; &#x27;</span> + last_name</span><br><span class="line">    <span class="keyword">return</span> full_name.title()</span><br><span class="line">musician = get_formatted_name(<span class="string">&#x27;jimi&#x27;</span>, <span class="string">&#x27;hendrix&#x27;</span>)</span><br><span class="line">print(musician)</span><br><span class="line">musician = get_formatted_name(<span class="string">&#x27;john&#x27;</span>, <span class="string">&#x27;hooker&#x27;</span>, <span class="string">&#x27;lee&#x27;</span>)</span><br><span class="line">print(musician) </span><br></pre></td></tr></table></figure>
+
+
+<p>在这个示例中，姓名是根据三个可能提供的部分创建的。由于人都有名和姓，因此在函数定义中首先列出了这两个形参。中间名是可选的，因此在函数定义中最后列出该形参，并将其默认值设置为空字符串。  </p>
+<p>在函数体中，我们检查是否提供了中间名。Python将非空字符串解读为True，因此如果函数调用中提供了中间名，<code>if middle_name</code>将为<code>True</code>。如果提供了中间名，就将名、中间名和姓合并为姓名，然后将其修改为首字母大写格式，并返回到函数调用行。</p>
+<p>在函数调用行，将返回的值存储在变量<code>musician</code>中；然后将这个变量的值打印出来。如果没有提供中间名，<code>middle_name</code>将为空字符串，导致<code>if</code>测试未通过，进而执行<code>else</code>代码块：只使用名和姓来生成姓名，并将设置好格式的姓名返回给函数调用行。</p>
+<p>在函数调用行，将返回的值存储在变量<code>musician</code>中；然后将这个变量的值打印出来。调用这个函数时，如果只想指定名和姓，调用起来将非常简单。如果还要指定中间名，就必须确保它是最后一个实参，这样Python才能正确地将位置实参关联到形参。<br>这个修改后的版本适用于只有名和姓的人，也适用于还有中间名的人：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Jimi Hendrix</span><br><span class="line">John Lee Hooker</span><br></pre></td></tr></table></figure>
+<p>可选值让函数能够处理各种不同情形的同时，确保函数调用尽可能简单。</p>
+<blockquote>
+<p>本篇文章没有作业，下一篇我们讲解函数的高级用法</p>
+</blockquote>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_footer.jpg" alt="公众号"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">弗拉德</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.fulade.me/python-functions-1-13.html">https://www.fulade.me/python-functions-1-13.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.fulade.me" target="_blank">弗拉德 | 技术博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python-%E5%87%BD%E6%95%B0/">Python 函数</a><a class="post-meta__tags" href="/tags/%E5%87%BD%E6%95%B0/">函数</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/python-functions-1-14.html"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【Python 1-14】Python手把手教程之——详解函数的高级用法</div></div></a></div><div class="next-post pull-right"><a href="/python-input-12.html"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【Python 1-12】Python手把手教程之——用户输入input函数</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/python-functions-1-14.html" title="【Python 1-14】Python手把手教程之——详解函数的高级用法"><img class="cover" src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-21</div><div class="title">【Python 1-14】Python手把手教程之——详解函数的高级用法</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">弗拉德</div><div class="author-info__description">一生只有一个职业:学生</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">41</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://blog.csdn.net/nsurl"><i></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://juejin.im/user/2638445746091757" target="_blank" title="掘进"><i class="fas fa-tree"></i></a><a class="social-icon" href="https://www.jianshu.com/u/0423d00474f3" target="_blank" title="简书"><i class="fas fa-book"></i></a><a class="social-icon" href="mailto:zhx1222@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content"><div class="announcement_content">欢迎各位关注我的微信公众号，微信搜索：fulade_me </div><img class=" lazyloaded" data-src="https://cdn.shawnlin.cn/blog/images/notice.png" onerror="onerror=null,src=&quot;/img/friend_404.gif&quot;" width="180px" style="display:block;margin:0 auto" src="https://cdn.jsdelivr.net/gh/Johnson8888/blog_pages/images/gzh_qrcode.jpg"></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">定义函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%91%E5%87%BD%E6%95%B0%E4%BC%A0%E9%80%92%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.</span> <span class="toc-text">向函数传递信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E5%8F%82%E5%92%8C%E5%BD%A2%E5%8F%82"><span class="toc-number">1.2.</span> <span class="toc-text">实参和形参</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E9%80%92%E5%AE%9E%E5%8F%82"><span class="toc-number">2.</span> <span class="toc-text">传递实参</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE%E5%AE%9E%E5%8F%82"><span class="toc-number">2.1.</span> <span class="toc-text">位置实参</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E5%A4%9A%E6%AC%A1"><span class="toc-number">2.1.1.</span> <span class="toc-text">调用函数多次</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE%E5%AE%9E%E5%8F%82%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%BE%88%E9%87%8D%E8%A6%81"><span class="toc-number">2.1.2.</span> <span class="toc-text">位置实参的顺序很重要</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E5%AE%9E%E5%8F%82"><span class="toc-number">2.2.</span> <span class="toc-text">关键字实参</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">2.3.</span> <span class="toc-text">默认值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E6%95%88%E7%9A%84%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8"><span class="toc-number">2.4.</span> <span class="toc-text">等效的函数调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%81%BF%E5%85%8D%E5%AE%9E%E5%8F%82%E9%94%99%E8%AF%AF"><span class="toc-number">2.5.</span> <span class="toc-text">避免实参错误</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">3.</span> <span class="toc-text">返回值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%AE%80%E5%8D%95%E5%80%BC"><span class="toc-number">3.1.</span> <span class="toc-text">返回简单值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A9%E5%AE%9E%E5%8F%82%E5%8F%98%E6%88%90%E5%8F%AF%E9%80%89%E7%9A%84"><span class="toc-number">3.2.</span> <span class="toc-text">让实参变成可选的</span></a></li></ol></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/python-functions-1-14.html" title="【Python 1-14】Python手把手教程之——详解函数的高级用法"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Python 1-14】Python手把手教程之——详解函数的高级用法"/></a><div class="content"><a class="title" href="/python-functions-1-14.html" title="【Python 1-14】Python手把手教程之——详解函数的高级用法">【Python 1-14】Python手把手教程之——详解函数的高级用法</a><time datetime="2020-12-21T11:22:53.000Z" title="发表于 2020-12-21 19:22:53">2020-12-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/python-functions-1-13.html" title="【Python 1-13】Python手把手教程之——详解函数和函数的使用"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Python 1-13】Python手把手教程之——详解函数和函数的使用"/></a><div class="content"><a class="title" href="/python-functions-1-13.html" title="【Python 1-13】Python手把手教程之——详解函数和函数的使用">【Python 1-13】Python手把手教程之——详解函数和函数的使用</a><time datetime="2020-12-20T08:05:51.000Z" title="发表于 2020-12-20 16:05:51">2020-12-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/python-input-12.html" title="【Python 1-12】Python手把手教程之——用户输入input函数"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Python 1-12】Python手把手教程之——用户输入input函数"/></a><div class="content"><a class="title" href="/python-input-12.html" title="【Python 1-12】Python手把手教程之——用户输入input函数">【Python 1-12】Python手把手教程之——用户输入input函数</a><time datetime="2020-12-20T06:58:45.000Z" title="发表于 2020-12-20 14:58:45">2020-12-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/tensorflow-windows-install-anaconda-03.html" title="在Windows下使用Anaconda安装TesnsorFlow 2.x"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_10_10_python_artificial_intelligence.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在Windows下使用Anaconda安装TesnsorFlow 2.x"/></a><div class="content"><a class="title" href="/tensorflow-windows-install-anaconda-03.html" title="在Windows下使用Anaconda安装TesnsorFlow 2.x">在Windows下使用Anaconda安装TesnsorFlow 2.x</a><time datetime="2020-12-19T05:13:50.000Z" title="发表于 2020-12-19 13:13:50">2020-12-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/flutter-ui-button-widget-17.html" title="【Flutter 1-17】Flutter手把手教程UI控件——【多图预警】按钮RaisedButton、FlatButton、OutlineButton、IconButton"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_flutter_blue.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Flutter 1-17】Flutter手把手教程UI控件——【多图预警】按钮RaisedButton、FlatButton、OutlineButton、IconButton"/></a><div class="content"><a class="title" href="/flutter-ui-button-widget-17.html" title="【Flutter 1-17】Flutter手把手教程UI控件——【多图预警】按钮RaisedButton、FlatButton、OutlineButton、IconButton">【Flutter 1-17】Flutter手把手教程UI控件——【多图预警】按钮RaisedButton、FlatButton、OutlineButton、IconButton</a><time datetime="2020-12-16T12:38:22.000Z" title="发表于 2020-12-16 20:38:22">2020-12-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/flutter-ui-text-widget-1-16.html" title="【Flutter 1-16】Flutter手把手教程UI布局和Widget——文本和样式 Text Widget"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_flutter_blue.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Flutter 1-16】Flutter手把手教程UI布局和Widget——文本和样式 Text Widget"/></a><div class="content"><a class="title" href="/flutter-ui-text-widget-1-16.html" title="【Flutter 1-16】Flutter手把手教程UI布局和Widget——文本和样式 Text Widget">【Flutter 1-16】Flutter手把手教程UI布局和Widget——文本和样式 Text Widget</a><time datetime="2020-12-15T12:09:03.000Z" title="发表于 2020-12-15 20:09:03">2020-12-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/tensorflow-list-ai-lib-02.html" title="细数最流行的人工智能、深度学习常用框架，不止有TensorFlow，Java也可以进行人工智能开发"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_10_10_python_artificial_intelligence.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="细数最流行的人工智能、深度学习常用框架，不止有TensorFlow，Java也可以进行人工智能开发"/></a><div class="content"><a class="title" href="/tensorflow-list-ai-lib-02.html" title="细数最流行的人工智能、深度学习常用框架，不止有TensorFlow，Java也可以进行人工智能开发">细数最流行的人工智能、深度学习常用框架，不止有TensorFlow，Java也可以进行人工智能开发</a><time datetime="2020-12-14T08:19:53.000Z" title="发表于 2020-12-14 16:19:53">2020-12-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/tensorflow-mac-install-anaconda-01.html" title="Anaconda和conda命令的安装和使用"><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2020_10_10_python_artificial_intelligence.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Anaconda和conda命令的安装和使用"/></a><div class="content"><a class="title" href="/tensorflow-mac-install-anaconda-01.html" title="Anaconda和conda命令的安装和使用">Anaconda和conda命令的安装和使用</a><time datetime="2020-12-11T01:35:17.000Z" title="发表于 2020-12-11 09:35:17">2020-12-11</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_conver_python.jpg)"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2020 By 弗拉德</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: '9b64cc66df39380f4362',
+      clientSecret: '70a8013b8e0a7167993ea1e7bfd495c7ad9add96',
+      repo: 'Johnson8888.github.io',
+      owner: 'Johnson8888',
+      admin: ['Johnson8888'],
+      id: '8a451474cf0504a7f254f70ffdf41841',
+      language: 'zh-CN',
+      perPage: 20,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    $.getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js', initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
