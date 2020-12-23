@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.fulade.me/python-class-1-16.html</loc>
+    
+    <lastmod>2020-12-23</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.fulade.me/python-class-1-15.html</loc>
     
     <lastmod>2020-12-23</lastmod>
@@ -621,6 +628,27 @@
   
   <url>
     <loc>https://www.fulade.me/tags/Python-Class/</loc>
+    <lastmod>2020-12-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fulade.me/tags/Python-%E7%BB%A7%E6%89%BF/</loc>
+    <lastmod>2020-12-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fulade.me/tags/Python-%E7%88%B6%E7%B1%BB/</loc>
+    <lastmod>2020-12-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fulade.me/tags/Python-%E5%AD%90%E7%B1%BB/</loc>
     <lastmod>2020-12-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
