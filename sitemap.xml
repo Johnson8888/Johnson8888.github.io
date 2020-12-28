@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.fulade.me/flutter-ui-container-widget-1-17.html</loc>
+    
+    <lastmod>2020-12-28</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.fulade.me/tips-wechat-redpacket-cover.html</loc>
     
     <lastmod>2020-12-28</lastmod>
@@ -684,6 +691,27 @@
   
   <url>
     <loc>https://www.fulade.me/tags/Python-I-O/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fulade.me/tags/Flutter-Container/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fulade.me/tags/Flutter-%E5%AE%B9%E5%99%A8/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.fulade.me/tags/Flutter-%E6%8E%A7%E4%BB%B6/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
