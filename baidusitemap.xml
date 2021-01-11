@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.fulade.me/flutter-ui-textfield-widget-1-20.html</loc>
+    <loc>https://www.fulade.me/flutter-ui-textfield-widget-2-5.html</loc>
+    <lastmod>2021-01-11</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fulade.me/flutter-ui-text-widget-2-1.html</loc>
+    <lastmod>2021-01-11</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fulade.me/flutter-ui-stateful-widget-2-4.html</loc>
+    <lastmod>2021-01-11</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fulade.me/flutter-ui-container-widget-2-3.html</loc>
+    <lastmod>2021-01-11</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fulade.me/flutter-ui-button-widget-2-2.html</loc>
+    <lastmod>2021-01-11</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fulade.me/flutter-ui-image-widget-2-6.html</loc>
+    <lastmod>2021-01-11</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fulade.me/dart-package-1-14.html</loc>
     <lastmod>2021-01-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.fulade.me/flutter-ui-stateful-widget-1-19.html</loc>
-    <lastmod>2021-01-06</lastmod>
-  </url>
-  <url>
-    <loc>https://www.fulade.me/flutter-ui-container-widget-1-18.html</loc>
-    <lastmod>2021-01-05</lastmod>
   </url>
   <url>
     <loc>https://www.fulade.me/python-error-1-18.html</loc>
@@ -51,14 +67,6 @@
   <url>
     <loc>https://www.fulade.me/python-functions-1-13.html</loc>
     <lastmod>2020-12-21</lastmod>
-  </url>
-  <url>
-    <loc>https://www.fulade.me/flutter-ui-button-widget-17.html</loc>
-    <lastmod>2020-12-18</lastmod>
-  </url>
-  <url>
-    <loc>https://www.fulade.me/flutter-ui-text-widget-1-16.html</loc>
-    <lastmod>2020-12-17</lastmod>
   </url>
   <url>
     <loc>https://www.fulade.me//top_index.html</loc>
@@ -154,10 +162,6 @@
   </url>
   <url>
     <loc>https://www.fulade.me//flutter-project-files-1-6.html</loc>
-    <lastmod>2020-12-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.fulade.me/dart-package-1-14.html</loc>
     <lastmod>2020-12-08</lastmod>
   </url>
   <url>
