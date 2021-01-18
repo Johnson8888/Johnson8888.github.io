@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.fulade.me/flutter-ui-listview-widget-2-11.html</loc>
+    <lastmod>2021-01-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fulade.me/flutter-ui-warp-widget-2-10.html</loc>
+    <lastmod>2021-01-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fulade.me/flutter-ui-flexible-widget-2-9.html</loc>
+    <lastmod>2021-01-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fulade.me/flutter-ui-gridview-widget-2-12.html</loc>
+    <lastmod>2021-01-18</lastmod>
+  </url>
+  <url>
     <loc>https://www.fulade.me/flutter-ui-column-widget-2-7.html</loc>
     <lastmod>2021-01-14</lastmod>
   </url>
