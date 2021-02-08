@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.fulade.me//top_index.html</loc>
+    <lastmod>2021-02-08</lastmod>
+  </url>
+  <url>
     <loc>https://www.fulade.me/flutter-high-sqflite-3-4.html</loc>
     <lastmod>2021-02-08</lastmod>
   </url>
@@ -111,10 +115,6 @@
   <url>
     <loc>https://www.fulade.me/python-functions-1-13.html</loc>
     <lastmod>2020-12-21</lastmod>
-  </url>
-  <url>
-    <loc>https://www.fulade.me//top_index.html</loc>
-    <lastmod>2020-12-16</lastmod>
   </url>
   <url>
     <loc>https://www.fulade.me/tensorflow-mac-install-anaconda-01.html</loc>
