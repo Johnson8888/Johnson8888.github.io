@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.fulade.me/tips-loon-10.html</loc>
+    <lastmod>2022-01-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fulade.me/dart-operator-1-10.html</loc>
+    <lastmod>2022-01-27</lastmod>
+  </url>
+  <url>
     <loc>https://www.fulade.me/flutter-high-lottie-3-5.html</loc>
     <lastmod>2021-04-13</lastmod>
   </url>
@@ -134,7 +142,7 @@
   </url>
   <url>
     <loc>https://www.fulade.me/tensorflow-mac-install-anaconda-01.html</loc>
-    <lastmod>2020-12-12</lastmod>
+    <lastmod>2020-12-14</lastmod>
   </url>
   <url>
     <loc>https://www.fulade.me/python-dict-1-11.html</loc>
@@ -145,11 +153,19 @@
     <lastmod>2020-12-10</lastmod>
   </url>
   <url>
+    <loc>https://www.fulade.me/dart-functions-1-9.html</loc>
+    <lastmod>2020-12-10</lastmod>
+  </url>
+  <url>
     <loc>https://www.fulade.me/dart-variable-1-7.html</loc>
     <lastmod>2020-12-09</lastmod>
   </url>
   <url>
     <loc>https://www.fulade.me/python-if-control-1-10.html</loc>
+    <lastmod>2020-12-08</lastmod>
+  </url>
+  <url>
+    <loc>https://www.fulade.me//windows-install-flutter.html</loc>
     <lastmod>2020-12-08</lastmod>
   </url>
   <url>
@@ -170,10 +186,6 @@
   </url>
   <url>
     <loc>https://www.fulade.me//why-flutter-1-1.html</loc>
-    <lastmod>2020-12-08</lastmod>
-  </url>
-  <url>
-    <loc>https://www.fulade.me//windows-install-flutter.html</loc>
     <lastmod>2020-12-08</lastmod>
   </url>
   <url>
@@ -221,10 +233,6 @@
     <lastmod>2020-12-08</lastmod>
   </url>
   <url>
-    <loc>https://www.fulade.me/dart-functions-1-9.html</loc>
-    <lastmod>2020-12-08</lastmod>
-  </url>
-  <url>
     <loc>https://www.fulade.me/dart-asynchronous-1-13.html</loc>
     <lastmod>2020-12-05</lastmod>
   </url>
@@ -258,10 +266,6 @@
   </url>
   <url>
     <loc>https://www.fulade.me/tips-github-free-books-3.html</loc>
-    <lastmod>2020-12-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.fulade.me/dart-operator-1-10.html</loc>
     <lastmod>2020-12-03</lastmod>
   </url>
   <url>

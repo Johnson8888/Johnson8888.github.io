@@ -31,6 +31,31 @@
     
     
     <entry>
+      <title>薅羊毛利器——Loon Cookie放在本地一点也不担心</title>
+      <link href="tips-loon-10.html"/>
+      <url>tips-loon-10.html</url>
+      
+        <content type="html"><![CDATA[<p>作者 | 弗拉德<br>来源 | 弗拉德（公众号：fulade_me)</p><h4 id="Loon"><a href="#Loon" class="headerlink" title="Loon"></a>Loon</h4><p><a href="https://apps.apple.com/us/app/loon/id1373567447">Loon</a>是一款在iOS系统下的代理工具(<strong>目前还没有Android版本</strong>)，它支持在本地执行js脚本，只需简单配置即可成为薅羊毛利器</p><h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><ul><li>可以去美区AppStore下载，价格$4.99，需要有一个美区的AppleId账号，并且充值美元</li><li>可以去某宝或拼夕夕搜索并购买，价格大概在￥9.99</li></ul><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2022_01_27_jd_loon_1.jpg" alt="2022_01_27_jd_loon_1"><br>然后将下面 框里面的配置赋值粘贴进去，点击保存</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">[General]</span><br><span class="line"><span class="comment"># IPv6 支持</span></span><br><span class="line">ipv6 = <span class="literal">false</span></span><br><span class="line"><span class="comment">## skip-proxy和bypass-tun 一般不需要做改动,除非你自己知道自己在做什么</span></span><br><span class="line"><span class="comment"># 需要跳过代理的IP段及其域名,其中的域名和IP段将不会在通过规则匹配</span></span><br><span class="line">skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,localhost,*.<span class="built_in">local</span>,passenger.t3go.cn,passenger.t3go.cn</span><br><span class="line"><span class="comment"># 设置不通过tun的域名和IP,同上所在内容将不会走规则匹配</span></span><br><span class="line">bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32</span><br><span class="line"><span class="comment"># DNS 服务器</span></span><br><span class="line"><span class="comment"># Loon将并行查询所有dns,使用最快返回的IP进行网络访问和分流判断</span></span><br><span class="line"><span class="comment"># 配置DNS服务器IP,不推荐8.8.8.8和1.1.1.1等国外dns提供商,这些并不会提高国外访问稳定性,并且会导致国内域名的dns查询变慢</span></span><br><span class="line"><span class="comment"># 需要使用WIFI和运营商分配的dns可以添加[system],例如dns-server=system,119.29.29.29</span></span><br><span class="line"><span class="comment"># system和公共IP必须二选一填写</span></span><br><span class="line">dns-server = 119.29.29.29,223.5.5.5</span><br><span class="line"><span class="comment"># 允许UDP代理</span></span><br><span class="line"><span class="comment"># 实际需要节点支持,和在节点中开启UDP</span></span><br><span class="line">allow-udp-proxy = <span class="literal">true</span></span><br><span class="line"><span class="comment"># 局域网共享</span></span><br><span class="line"><span class="comment"># 为局域网设备共享HTTP和SOCKS代理</span></span><br><span class="line">allow-wifi-access = <span class="literal">false</span></span><br><span class="line">wifi-access-http-port = 7890</span><br><span class="line">wifi-access-socket5-port = 7891</span><br><span class="line"><span class="comment"># 代理测速 URL</span></span><br><span class="line"><span class="comment"># 用于节点的可用性检测</span></span><br><span class="line">proxy-test-url = http://www.gstatic.com/generate_204</span><br><span class="line"><span class="comment"># 检测超时时间</span></span><br><span class="line">test-timeout = 5</span><br><span class="line"><span class="comment"># 返回真实IP</span></span><br><span class="line"><span class="comment"># 对一下域名不再返回FakeIP 一般不需要添加和修改</span></span><br><span class="line">real-ip = msftconnecttest.com, msftncsi.com, *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, *.battlenet.com.cn, *.battlenet.com, *.blzstatic.cn, *.battle.net</span><br><span class="line"><span class="comment"># 解析器</span></span><br><span class="line"><span class="comment"># 用于订阅 规则 复写等的解析</span></span><br><span class="line"><span class="comment"># 必须在配置中填写解析器URL,否则在UI不会出现解析器选项</span></span><br><span class="line"><span class="comment"># 现在Loon解析器功能暂时功能较弱,非必要条件下无需使用</span></span><br><span class="line">resource-parser = https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/scripts/sub-store-parser.js</span><br><span class="line"><span class="comment"># 运行模式SSID</span></span><br><span class="line"><span class="comment"># 用于在不同网络环境下切换Loon的运行模式,全局直连(direct)、自动分流(rule)和全局代理(proxy)</span></span><br><span class="line"><span class="comment"># 通过ssid(WIFI名)进行判断</span></span><br><span class="line"><span class="comment"># ssid-trigger参数,用于指定SSID下流量模式切换,（default表示默认,cellular表示蜂窝,目前支持三种值：,, </span></span><br><span class="line"><span class="comment"># 以下表示蜂窝数据(cellular)使用自动分流模式(rule),当链接WIFI名为ASUS的WIFI时使用直连模式(direct)</span></span><br><span class="line"><span class="comment"># 链接WIFI名为TPLINK的WIFI时使用自动分流模式(rule),其他情况(default)使用全局代理模式(proxy)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ssid-trigger=&quot;proxy&quot;:rule,&quot;cellular&quot;:rule,&quot;ASUS&quot;:direct,&quot;TPLINK&quot;:rule</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地节点</span></span><br><span class="line">[Proxy]</span><br><span class="line"><span class="comment"># 用于书写自己的节点,节点格式参考https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Nodes/ExampleNodes.list</span></span><br><span class="line"><span class="comment"># 可以直接从Loon的节点列表中通过信息,复制出对应节点的Loon格式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 机场订阅</span></span><br><span class="line"><span class="comment"># Loon订阅支持ss,ssr,trojan,vmess(v2ray)的原始订阅格式,可不使用转换器直接订阅</span></span><br><span class="line"><span class="comment"># 也可以使用Loon格式的专属订阅,节点格式参考[本地节点]</span></span><br><span class="line">[Remote Proxy]</span><br><span class="line">app = https://iwxf.netlify.app,udp=<span class="literal">false</span>,fast-open=<span class="literal">false</span>,img-url=app</span><br><span class="line"></span><br><span class="line"><span class="comment"># 节点过滤,为策略组过滤是需要的节点,比如过滤订阅的所有的新加坡节点、香港节点、美国节点等</span></span><br><span class="line">[Remote Filter]</span><br><span class="line">机场节点 = NameRegex, FilterKey = <span class="string">&quot;(.*)&quot;</span></span><br><span class="line">[Proxy Group]</span><br><span class="line">All = select,app,机场节点</span><br><span class="line"><span class="comment"># img-url为策略组图标,可选项</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 规则,用于自动分流 </span></span><br><span class="line"><span class="comment"># 本地规则</span></span><br><span class="line"><span class="comment"># 通常优先于订阅规则</span></span><br><span class="line"><span class="comment"># 规则优先级,从上往下依次匹配</span></span><br><span class="line"><span class="comment"># 格式: 类型,域名或IP,策略组</span></span><br><span class="line"><span class="comment"># 具体可参考https://raw.githubusercontent.com/Loon0x00/LoonExampleConfig/master/Rule/ExampleRule.list</span></span><br><span class="line">[Rule]</span><br><span class="line">DOMAIN,qq.com,DIRECT</span><br><span class="line">DOMAIN-SUFFIX,baidu.com,DIRECT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下两个规则将在最后匹配,优先级最低</span></span><br><span class="line"><span class="comment"># 若之前规则没匹配上,则通过查geoip数据库,如果请求是CN(中国)则走直连</span></span><br><span class="line">GEOIP,CN,DIRECT</span><br><span class="line"><span class="comment"># 最后匹配的规则,之前没有匹配上的规则的请求将会触发这条规则</span></span><br><span class="line"><span class="comment"># 将走Global策略组所选节点</span></span><br><span class="line">FINAL,Global</span><br><span class="line"></span><br><span class="line"><span class="comment"># 远程规则订阅</span></span><br><span class="line"><span class="comment"># 优先级从上往下</span></span><br><span class="line"><span class="comment"># 优先于GEOIP和FINAL本地规则</span></span><br><span class="line">[Remote Rule]</span><br><span class="line">https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/China/China.list, policy=direct, tag=国内域名, enabled=<span class="literal">true</span></span><br><span class="line"><span class="comment"># 使用Global策略组,匹配上国外域名规则的请求将会走Global所选节点</span></span><br><span class="line">https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Proxy/Proxy_Domain.list, policy=Global, tag=国外域名, enabled=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地脚本</span></span><br><span class="line">[Script]</span><br><span class="line"><span class="built_in">enable</span> = <span class="literal">false</span></span><br><span class="line"><span class="comment"># 远程脚本订阅</span></span><br><span class="line">[Remote Script]</span><br><span class="line">https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/JD.conf, tag=jd, enabled=<span class="literal">true</span></span><br><span class="line">https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Script.conf, tag=Script, enabled=<span class="literal">true</span></span><br><span class="line"><span class="comment"># 复写,需要配合MITM才能,否则无法针对HTTPS网站</span></span><br><span class="line"><span class="comment"># 主要用于重定向和广告的精准屏蔽(reject)</span></span><br><span class="line">[URL Rewrite]</span><br><span class="line"><span class="built_in">enable</span> = <span class="literal">false</span></span><br><span class="line">^https?:\/\/(www.)?(g|google)\.com\.hk 302 https://www.google.com</span><br><span class="line">^https?:\/\/(www.)?(g|google)\.cn 302 https://www.google.com</span><br><span class="line"></span><br><span class="line"><span class="built_in">enable</span> = <span class="literal">false</span></span><br><span class="line"><span class="comment"># 京东比价Fix</span></span><br><span class="line">^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start reject-200</span><br><span class="line"></span><br><span class="line"><span class="comment"># Loon插件</span></span><br><span class="line">[Plugin]</span><br><span class="line"><span class="comment"># 需要配置并开启MITM后才能使用</span></span><br><span class="line">https://raw.subloon.cf/AccelerateRaw.plugin, tag=Github加速, enabled=<span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 为域名指定解析的DNS服务器或者直接为域名指定IP</span></span><br><span class="line">[Host]</span><br><span class="line"></span><br><span class="line">[MITM]</span><br></pre></td></tr></table></figure><p>该配置文件包含jd的脚本<br><strong>Loon的使用和配置方法还有很多，这里就先以配置文件的方式来操作</strong></p><h4 id="安装证书"><a href="#安装证书" class="headerlink" title="安装证书"></a>安装证书</h4><p>在<code>配置</code>——&gt;<code>证书管理</code>安装证书，安装后记得在手机<code>设置</code>——&gt;<code>通用</code>——&gt;<code>关于本机</code>——&gt;<code>证书信任设置</code>里面找到以<code>LOON CA</code>开头的证书，开启信任</p><h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2022_01_27_jd_loon_2.jpg" alt="2022_01_27_jd_loon_2"><br>选择<code>自动分流</code>并点击<code>启动</code>,第一次启动会弹出对话框，都点确定就行</p><h4 id="更新脚本"><a href="#更新脚本" class="headerlink" title="更新脚本"></a>更新脚本</h4><p>找到<code>配置</code>——&gt;<code>订阅脚本</code>点击刷新按钮<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2022_01_27_jd_loon_3.jpg" alt="2022_01_27_jd_loon_3"><br>可以点击第一行的jd,进去看一下，确保每个脚本都更新完成，如果更新失败可以多试几次。<br><strong>所有脚本更新成功后，找到获取京东cookie的脚本并启用 (这一步很关键)</strong><br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2022_01_27_jd_loon_5.jpg" alt="2022_01_27_jd_loon_5"></p><h4 id="获取-京东Cookie"><a href="#获取-京东Cookie" class="headerlink" title="获取 京东Cookie"></a>获取 京东Cookie</h4><p>然后打开 Safari浏览器，输入<code>jd.com</code>，找到登录页面并登录(如果已经登录了，点击刷新即可，切记不要登出，否则cookie会失效)<br>登录成功后一定点一下 这里的 <code>我的</code><br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2022_01_27_jd_loon_6.jpg" alt="2022_01_27_jd_loon_6"><br>如果有多个账号，可继续点击  Safari 的<code>无痕浏览</code>登录其他账号即可</p><h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>打开<code>Loon</code>，找到首页<code>脚本</code><br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2022_01_27_jd_loon_7.jpeg" alt="2022_01_27_jd_loon_7"><br>点击<code>jd</code>找到第一个脚本，左滑并点击<code>运行</code>，看到输出有京豆变化可以了~<br><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/2022_01_27_jd_loon_8.jpeg" alt="2022_01_27_jd_loon_8"></p><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol><li>开启loon之后，手机所有的流量都会通过loon来转发，在使用AppStore下载App的时候，会比较慢。只要关掉loon下载等完成后再开启就可以了</li></ol><hr><p><img src="https://cdn.jsdelivr.net/gh/johnson8888/blog_pages/images/page_footer.jpg" alt="公众号"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tips </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tips </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>起名字老重名？使用这款利器可以快速帮你查询有哪些站点用了你的名字！</title>
       <link href="tips-sherlock-9.html"/>
       <url>tips-sherlock-9.html</url>
@@ -469,11 +494,11 @@
             
             <tag> Flutter 控件 </tag>
             
+            <tag> Flutter TextField </tag>
+            
             <tag> Flutter 输入框 </tag>
             
             <tag> Flutter 输入控件 </tag>
-            
-            <tag> Flutter TextField </tag>
             
         </tags>
       
@@ -1072,11 +1097,11 @@
             
             <tag> Dart语言 </tag>
             
+            <tag> Dart异步 </tag>
+            
             <tag> Flutter教程 </tag>
             
             <tag> Dart类 </tag>
-            
-            <tag> Dart异步 </tag>
             
             <tag> Dart Future </tag>
             
@@ -1105,11 +1130,11 @@
             
             <tag> Dart语言 </tag>
             
-            <tag> Dart运算符 </tag>
-            
             <tag> Flutter教程 </tag>
             
             <tag> Dart类 </tag>
+            
+            <tag> Dart运算符 </tag>
             
             <tag> Dart Class </tag>
             
@@ -1138,11 +1163,11 @@
             
             <tag> Dart语言 </tag>
             
-            <tag> Dart运算符 </tag>
-            
             <tag> Flutter教程 </tag>
             
             <tag> Dart类 </tag>
+            
+            <tag> Dart运算符 </tag>
             
             <tag> Dart Class </tag>
             
@@ -1196,9 +1221,9 @@
             
             <tag> Dart语言 </tag>
             
-            <tag> Dart运算符 </tag>
-            
             <tag> Flutter教程 </tag>
+            
+            <tag> Dart运算符 </tag>
             
         </tags>
       
